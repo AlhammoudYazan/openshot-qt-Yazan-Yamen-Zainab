@@ -92,6 +92,20 @@ class TimelineView(updates.UpdateInterface, ViewClass):
     clipAudioDataReady = pyqtSignal(str, object, str)
     fileAudioDataReady = pyqtSignal(str, object, str)
 
+    # In src/timeline.py
+def dragEnterEvent(self, event):
+    if event.mimeData().hasText() and self._is_valid_file(event.mimeData().text()):
+        event.acceptProposedAction()
+
+def dropEvent(self, event):
+    file_path = event.mimeData().text()
+    position = self._pixels_to_frames(event.pos().x())
+    
+    # Create new clip
+    clip = Clip(file_path)
+    clip.position = position
+    self.current_track.addClip(clip)
+    
     def connect_playback(self):
         """Connect playback signals to new experimental qwidget based timeline"""
         if ViewClass == TimelineWidget:
