@@ -11,6 +11,35 @@ video editing and animation solutions to the world.
 [![libopenshot-audio CI Build](https://github.com/OpenShot/libopenshot-audio/actions/workflows/ci.yml/badge.svg)](https://github.com/OpenShot/libopenshot-audio/actions/workflows/ci.yml)
 ![Discord](https://img.shields.io/discord/1143390791507644496?style=flat)
 
+# OpenShot Video Editor (Fork by Yazan, Yamen, and Zainab)
+
+OpenShot Video Editor is an award-winning **free and open-source** video editor for **Linux, Mac, and Windows**, providing high-quality **video editing** and **animation** solutions.
+
+---
+
+## 🚀 Build Status
+[![openshot-qt CI Build](#)](#) | [![libopenshot CI Build](#)](#) | [![libopenshot-audio CI Build](#)](#) | [![Discord](#)](#)
+
+---
+
+
+
+📌 **New Enhancements in This Fork**  
+🚀 **Improved drag-and-drop functionality in the timeline**  
+⚡ **Optimized project file management & UI improvements**  
+
+---
+
+## 📜 Installation & Setup
+### 1️⃣ Download Pre-built Installers
+🔗 [Download the latest OpenShot builds](https://www.openshot.org/download/)
+
+### 2️⃣ Building from Source
+```bash
+git clone https://github.com/AlhammoudYazan/openshot-qt-Yazan-Yamen-Zainab.git
+cd openshot-qt-Yazan-Yamen-Zainab
+python3 src/launch.py
+
 ## Features
 
 * Cross-platform (Linux, Mac, and Windows)
