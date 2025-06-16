@@ -134,3 +134,13 @@ class TimelineSync(UpdateInterface):
 
         # Refresh current frame (since the entire timeline was updated)
         self.window.refreshFrameSignal.emit()
+
+def mouseMoveEvent(self, event):
+    clip = self.get_selected_clip()
+    if clip:
+        mime_data = QMimeData()
+        mime_data.setData('application/x-openshot-clip', QByteArray(str(clip.id).encode()))
+        drag = QDrag(self)
+        drag.setMimeData(mime_data)
+        drag.exec(Qt.CopyAction)
+
