@@ -1208,3 +1208,7 @@ class ProjectDataStore(JsonDataStore, UpdateInterface):
         self._data["channel_layout"] = channel_layout
 
         log.info("Apply default audio playback settings: %s, %s channels" % (self._data["sample_rate"], self._data["channels"]))
+
+    def add_clip_to_project_files(project, timeline_clip):
+    if not project.has_clip(timeline_clip.id):
+        project.add_clip(timeline_clip.clone())  # Clone or copy to avoid reference issues
