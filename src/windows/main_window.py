@@ -3230,6 +3230,18 @@ class MainWindow(updates.UpdateWatcher, QMainWindow):
         # Update cache reference, so it doesn't go out of scope
         self.cache_object = new_cache_object
 
+
+    def __init__(self):
+    # Get references (adjust names as needed)
+    self.project_view = self.findChild(QTreeView, "projectTreeView")
+    self.timeline = self.findChild(QGraphicsView, "timelineWidget")
+    
+    # Ensure DnD is enabled
+    self.project_view.setDragEnabled(True)
+    self.timeline.setAcceptDrops(True)
+
+
+    
     def initModels(self):
         """Set up model/view classes for MainWindow"""
         s = get_app().get_settings()
