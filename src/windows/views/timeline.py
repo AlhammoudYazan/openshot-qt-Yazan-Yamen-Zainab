@@ -3389,7 +3389,7 @@ class TimelineView(updates.UpdateInterface, ViewClass):
     # Drop an item on the timeline
     def dropEvent(self, event):
         log.info("Dropping item on timeline - item_ids: %s, item_type: %s" % (self.item_ids, self.item_type))
-
+        print("Dropped mimeData content:", event.mimeData().text())
         # Accept the event
         event.accept()
 
